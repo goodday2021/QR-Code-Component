@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap"); /*imported font family*/
+
+/*This is called a "CSS reset*; used to set all elements, to make the page look the same in all kinds of browsers*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*the colors are global variables*/
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
+}
+
+/*100% so that the image does not overflow the container*/
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Outfit", sans-serif; /*Outfit is imported, sans-serif is a fallback font-family*/
+  font-size: 15px;
+  background-color: var(--light-gray); /*background color of the page*/
+  display: flex;
+  flex-direction: column; /*to make everything top to bottom*/
+  align-items: center; /*puts the whole card, QR code image, header and paragraph in the center*/
+  justify-content: center;/*this*/
+  /*-1px to remove the shakiness when the screen size changes*/
+  height: calc(100vh - 1px); /*and this puts everything to the center of the page; this pushes the whole card and everything down to the center of the page*/
+  margin: 1.25rem;
+}
+
+/*the card*/
+.container {
+  background-color: var(--white);
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+    /*5 px = horizontal, 5px = vertical, 5px = blur radius*/
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem; /*to have space between the card and the "Challenge by... Coded by..."*/
+}
+
+/*QR code image*/
+.container img {
+  border-radius: 0.625rem; 
+  margin-bottom: 1rem; /*to have space between the QR code image and the "Improve your... building projects..."*/
+}
+
+/*"Improve your... building projects..."*/
+.container h1 {
+  color: var(--dark-blue); /*font-color*/
+  text-align: center;
+  margin-bottom: 1rem; /*to have space between the header and the paragraph*/
+}
+
+/*"Scan the... next level..."*/
+.container p {
+  color: var(--grayish-blue); /*font-color*/
+  text-align: center;
+}
+
+/*"Scan the... next level..."*/
+.attribution {
+  font-size: 14px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*to limit the containter; to make everything be placed in its place even when the screen resolution size changes*/
+@media (min-width: 500px) {
+  .container {
+    width: 400px;
+  }
+}
